@@ -113,7 +113,7 @@ mb.on('ready', function ready() {
       fileNames => {
         // fileNames is an array that contains all the selected
         if (fileNames === undefined) {
-          alert('No library file selected');
+          console.log('No library file selected');
           return;
         }
 
@@ -123,7 +123,7 @@ mb.on('ready', function ready() {
         if (libraryPath != undefined) {
           fs.readFile(libraryPath, 'utf-8', (err, data) => {
             if (err) {
-              alert('An error ocurred reading the file :' + err.message);
+              console.log('An error ocurred reading the file :' + err.message);
               return;
             }
             var shouldOverwrite = dialog.showMessageBox({
@@ -136,7 +136,9 @@ mb.on('ready', function ready() {
             if (shouldOverwrite == 0) {
               fs.writeFile(savePath, data, function(err2) {
                 if (err2) {
-                  alert('An error ocurred writing the file :' + err2.message);
+                  console.log(
+                    'An error ocurred writing the file :' + err2.message,
+                  );
                   return;
                 }
               });
@@ -146,7 +148,7 @@ mb.on('ready', function ready() {
             }
           });
         } else {
-          alert('No library file selected');
+          console.log('No library file selected');
         }
       },
     );
