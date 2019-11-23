@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -eou pipefail
+
+PKG_VERSION="$(yarn version | grep Current | awk -F ": " '{print $2}')"
+
+set -x
+
+rm -rf ./build/
+
+# --no-prune necessary b/c https://github.com/maxogden/menubar/issues/175
+yarn electron-packager . Gifwiddit --out build --no-prune --platform=darwin --arch=x64 --version=1.3.3 --app-version="${PKG_VERSION}" --cache="$HOME/.gifwiddit" --asar --overwrite

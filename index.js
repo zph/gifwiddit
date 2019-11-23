@@ -193,7 +193,7 @@ mb.on('ready', function ready() {
   });
 
   // Register a 'ctrl+shift+space' shortcut listener.
-  var ret = globalShortcut.register('command+shift+g', function() {
+  var ret = globalShortcut.register('alt+command+g', function() {
     mb.window.isVisible() ? mb.hideWindow() : mb.showWindow();
   });
 });
