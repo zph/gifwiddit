@@ -68,6 +68,7 @@ mb.app.on('will-quit', function() {
 });
 
 mb.on('after-create-window', function() {
+  // / $HOME/Library/Application Support/gifwiddit-ruxton/library.gifwit
   var filepath = path.join(mb.app.getPath('userData'), 'library.gifwit');
 
   mb.window.webContents.on('did-finish-load', function() {
