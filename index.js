@@ -11,7 +11,12 @@ var fs = require('fs');
 var path = require('path');
 var {menubar} = require('menubar');
 
-var mb = menubar({dir: __dirname + '/app', width: 300, preloadWindow: true});
+var mb = menubar({
+  dir: __dirname + '/app',
+  width: 300,
+  preloadWindow: true,
+  webPreferences: {nodeIntegration: true},
+});
 
 var menuTemplate = [
   {

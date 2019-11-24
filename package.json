@@ -6,8 +6,8 @@
     "menubar": "*"
   },
   "devDependencies": {
-    "electron-packager": "^9.0.0",
-    "electron": "^1.7.5"
+    "electron-packager": "*",
+    "electron": "^7.0.0"
   },
   "main": "index.js",
   "scripts": {
